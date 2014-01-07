@@ -1,15 +1,15 @@
 	# let's put all students into an array
 students = [
-	"Dr. Hannibal Lecter",
-	"Darth Vader",
-	"Nurse Ratched",
-	"Michael Corleone",
-	"Alex De Large",
-	"The Alien",
-	"Terminator",
-	"Freddy Kruger",
-	"The Joker",
-	"Mr T"
+	["Dr. Hannibal Lecter", :dicembre],
+	["Darth Vader", :dicembre],
+	["Nurse Ratched", :dicembre],
+	["Michael Corleone", :dicembre],
+	["Alex De Large", :dicembre],
+	["The Alien", :dicembre],
+	["Terminator", :dicembre],
+	["Freddy Kruger", :dicembre],
+	["The Joker", :dicembre],
+	["Mr T", :dicembre]
 ]
 
 def print_header
@@ -17,9 +17,9 @@ def print_header
 	puts "-------------"
 end
 
-def print(names)
-	names.each do |name|
-		puts name
+def print(students)
+	students.each do |student|
+		puts "#{student[0]} (#{student[1]} cohort)"
 	end
 end
 
