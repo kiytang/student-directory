@@ -3,6 +3,7 @@ def print_header
 	puts "----------"
 end
 
+# print student name that begin with "A or a"
 def print(students)
 	filter = /\Aa/i
 	students.each_with_index do |student, index|
