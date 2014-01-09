@@ -4,10 +4,20 @@ def print_header
 end
 
 def print(students)
-	students.each_with_index do|student, index| 
-		puts "#{index+1}: #{student[:name]} in #{student[:cohort].capitalize} cohort"
+	filter = /\Aa/i
+	students.each_with_index do |student, index|
+		if student [:name] =~ filter
+			puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
+		else
+			puts "#{index+1}: No name beginning with 'A' or 'a' matched"
+		end
 	end
-end
+end	
+# def print(students)
+# 	students.each_with_index do|student, index| 
+# 		puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
+# 	end
+# end
 
 def print_footer(names)
 	puts "overall, we have #{names.length} great students"
