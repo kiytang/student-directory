@@ -4,16 +4,28 @@ def print_header
 end
 
 # print student name that begin with "A or a"
+# def print(students)
+# 	filter = /\Aa/i
+# 	students.each_with_index do |student, index|
+# 		if student[:name].length =~ filter
+# 			puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
+# 		else
+# 			puts "#{index+1}: No name beginning with 'A' or 'a' matched"
+# 		end
+# 	end
+# end	
+
+# Modify your program to only print the students whose name is shorter than 12 characters
 def print(students)
-	filter = /\Aa/i
 	students.each_with_index do |student, index|
-		if student [:name] =~ filter
+		if student[:name].length <= 12
 			puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
 		else
-			puts "#{index+1}: No name beginning with 'A' or 'a' matched"
+			puts "#{index+1}: Name consists in excees or 12 characters-too lazy to print-out"
 		end
 	end
 end	
+
 # def print(students)
 # 	students.each_with_index do|student, index| 
 # 		puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
