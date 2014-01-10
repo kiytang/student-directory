@@ -7,8 +7,8 @@ The first project at Makers Academy is to design a program to manage the list of
 
 What we are using:
 -----------------
-The project will focus on our understanding of Ruby and version control (Git).
+The project will focus on our understanding of Ruby and version control (Git and Github).
 
 Note: 
 ---------
-There will be deployment TDD at this stage on the project.
+There will be deployment TDD at this stage on the project, as the primay focus is to learn Ruby syntx and version control 
