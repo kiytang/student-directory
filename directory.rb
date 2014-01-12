@@ -1,3 +1,5 @@
+@students = []
+
 def print_header
 	puts "The students of my cohort at MA"
 	puts "----------"
@@ -80,6 +82,7 @@ def interactive_menu
 	end
 end
 
+interactive_menu
 # Rewrite the each() method that prints all students using "while" 
 # or "until" control flow methods.
 
