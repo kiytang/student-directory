@@ -7,7 +7,7 @@ def print_header
 end
 
 # Modify your program to only print the students whose name is shorter than 12 characters
-def print(students)
+def print_students_list
 	@students.each_with_index do |student, index|
 		if student[:name].length <= 12
 			puts "#{index+1}: #{student[:name]} was born on #{student[:date_of_birth]} enjoys #{student[:hobbies]} born in #{student[:birth_country]} and is part of the #{student[:cohort].capitalize} cohort"
@@ -17,7 +17,7 @@ def print(students)
 	end
 end	
 
-def print_footer(names)
+def print_footer
 	puts "overall, we have #{@students.length} great students"
 end
 
@@ -57,33 +57,46 @@ def input_students
 	# students
 end
 
-# adding a interactive menu
-def interactive_menu
-	students = []
-	loop do
-		# 1. print the menu and ask the user what to do
-		puts "1. Input the students"
-		puts "2. Show the students"
-		puts "9. Exit" #9 because we will eb adding more items later
-		# 2. read the input and save it into a variable
-		selection = gets.chomp
-		# 3. do what the user has asked
-		case selection
-		when "1"
-			students = input_students
-		when "2"
-			print_header
-			print(students)
-			print_footer(students)
-		when "9"
-			exit # this will cause the program to terminate
-		else
-			puts "I don't know what you meant, try again"
-		end
+def print_menu
+	puts "1. Input the students"
+	puts "2. Show the students"
+	puts "9. Exit" # 9 because we will be adding more items later
+end
+
+def show_students
+	print_header
+	print_students_list
+	print_footer
+end
+
+# extract 'case statement' to a new method
+
+def process(selection)
+	case selection
+	when "1"
+		input_students
+	when "2"
+		show_students
+	when "9"
+		exit
+	else
+		puts "I don't know what you mean, try again"
 	end
 end
 
+
+# adding a interactive menu
+def interactive_menu
+		loop do
+			print_menu
+			process(gets.chomp)
+		end
+end
+
 interactive_menu
+
+
+#  --------------------------------------------  #
 # Rewrite the each() method that prints all students using "while" 
 # or "until" control flow methods.
 
