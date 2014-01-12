@@ -1,3 +1,4 @@
+#variable outside all methods, so that it were accessible in all methods.
 @students = []
 
 def print_header
@@ -7,7 +8,7 @@ end
 
 # Modify your program to only print the students whose name is shorter than 12 characters
 def print(students)
-	students.each_with_index do |student, index|
+	@students.each_with_index do |student, index|
 		if student[:name].length <= 12
 			puts "#{index+1}: #{student[:name]} was born on #{student[:date_of_birth]} enjoys #{student[:hobbies]} born in #{student[:birth_country]} and is part of the #{student[:cohort].capitalize} cohort"
 		else
@@ -17,7 +18,7 @@ def print(students)
 end	
 
 def print_footer(names)
-	puts "overall, we have #{names.length} great students"
+	puts "overall, we have #{@students.length} great students"
 end
 
 # Our code only works with the student name and cohort. 
@@ -27,7 +28,7 @@ def input_students
 	puts "To finish, just hit return twice"
 	
 	# create an empty array
-	students = []
+	# students = []
 	# get the first name
 	name = gets.chomp
 	puts "Please enter the student's D.O.B"
@@ -40,8 +41,8 @@ def input_students
 	# while the name is not empty, repeat this code
 	while !name.empty? do
 		# add the student hash to the array
-		students << {:name => name, :cohort => :november, :date_of_birth => date_of_birth, :hobbies => hobbies, :birth_country => birth_country}
-		puts "Now we have #{students.length} students"
+		@students << {:name => name, :cohort => :november, :date_of_birth => date_of_birth, :hobbies => hobbies, :birth_country => birth_country}
+		puts "Now we have #{@students.length} students"
 		# get another name from the user
 		puts "Please enter the names of the students"
 		name = gets.chomp
@@ -53,7 +54,7 @@ def input_students
 		birth_country = gets.chomp
 	end
 	# return the array of students
-	students
+	# students
 end
 
 # adding a interactive menu
