@@ -3,18 +3,6 @@ def print_header
 	puts "----------"
 end
 
-# print student name that begin with "A or a"
-# def print(students)
-# 	filter = /\Aa/i
-# 	students.each_with_index do |student, index|
-# 		if student[:name].length =~ filter
-# 			puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
-# 		else
-# 			puts "#{index+1}: No name beginning with 'A' or 'a' matched"
-# 		end
-# 	end
-# end	
-
 # Modify your program to only print the students whose name is shorter than 12 characters
 def print(students)
 	students.each_with_index do |student, index|
@@ -92,12 +80,6 @@ def interactive_menu
 	end
 end
 
-students = input_students
-print_header
-print(students)
-print_footer(students)
-
-
 # Rewrite the each() method that prints all students using "while" 
 # or "until" control flow methods.
 
@@ -109,6 +91,19 @@ print_footer(students)
 # 		puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
 # 	end
 # end
+
+
+# print student name that begin with "A or a"
+# def print(students)
+# 	filter = /\Aa/i
+# 	students.each_with_index do |student, index|
+# 		if student[:name].length =~ filter
+# 			puts "#{index+1}: #{student[:name]} in the #{student[:cohort].capitalize} cohort"
+# 		else
+# 			puts "#{index+1}: No name beginning with 'A' or 'a' matched"
+# 		end
+# 	end
+# end	
 
 
 
