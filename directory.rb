@@ -69,6 +69,8 @@ def show_students
 	print_footer
 end
 
+def save_students
+	
 # extract 'case statement' to a new method
 
 def process(selection)
