@@ -82,6 +82,8 @@ def save_students
 	file.close
 end
 
+def laod_students
+
 # extract 'case statement' to a new method
 def process(selection)
 	case selection
