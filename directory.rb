@@ -30,28 +30,29 @@ def input_students
 	# create an empty array
 	# students = []
 	# get the first name
-	name = gets.chomp
+	name = STDIN.gets.chomp
 	puts "Please enter the student's D.O.B"
-	date_of_birth = gets.chomp
+	date_of_birth = STDIN.gets.chomp
 	puts "Please enter the student's hobbies"
-	hobbies = gets.chomp
+	hobbies = STDIN.gets.chomp
 	puts "Please enter country of birth"
-	birth_country = gets.chomp
+	birth_country = STDIN.gets.chomp
 
 	# while the name is not empty, repeat this code
 	while !name.empty? do
 		# add the student hash to the array
-		@students << {:name => name, :cohort => :november, :date_of_birth => date_of_birth, :hobbies => hobbies, :birth_country => birth_country}
+		#@students << {:name => name, :cohort => :november, :date_of_birth => date_of_birth, :hobbies => hobbies, :birth_country => birth_country}
+		add_student(name, :november)
 		puts "Now we have #{@students.length} students"
 		# get another name from the user
 		puts "Please enter the names of the students"
-		name = gets.chomp
+		name = STDIN.gets.chomp
 		puts "Please enter the student's D.O.B"
-		date_of_birth = gets.chomp
+		date_of_birth = STDIN.gets.chomp
 		puts "Please enter student's hobbies"
-		hobbies = gets.chomp
+		hobbies = STDIN.gets.chomp
 		puts "Please enter country of birth"
-		birth_country = gets.chomp
+		birth_country = STDIN.gets.chomp
 	end
 	# return the array of students
 	# students
@@ -96,6 +97,17 @@ def load_students(filename = "students.csv")
 	file.close
 end
 
+def try_load_students
+	filename =ARGV.first #first argument from the command line
+	return if filename.nil? #exit method if no file
+	if File.exists?(filename) #if firl exists
+		load_students(filename)
+		puts "Loaded #{@students.length} from #{filename}"
+	else 
+		puts "Sorry, #{filename} doesn't exist."
+		exit
+	end
+end
 # extract 'case statement' to a new method
 def process(selection)
 	case selection
@@ -119,10 +131,11 @@ end
 def interactive_menu
 		loop do
 			print_menu
-			process(gets.chomp)
+			process(STDIN.gets.chomp)
 		end
 end
 
+try_load_students
 interactive_menu
 
 
