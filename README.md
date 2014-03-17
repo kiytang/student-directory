@@ -11,4 +11,4 @@ The project will focus on our understanding of Ruby and version control (Git and
 
 Note: 
 ---------
-There will be deployment TDD at this stage on the project, as the primay focus is to learn Ruby syntx and version control 
+There will be deployment TDD at this stage on the project, as the primay focus is to learn Ruby syntax and version control 
